@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(45deg, #1c1c1c, #3a3a3a); /* Градиентный фон */
+            color: #B0B0B0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.7); /* Прозрачный фон для контейнера */
+            border-radius: 15px; /* Скругленные углы */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Тень для контейнера */
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Легкая тень для текста */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .title:hover {
+            color: #ffcc00; /* Светлый цвет текста при наведении */
+            transform: translateY(-5px); /* Легкий сдвиг вверх */
+        }
+
+        .social-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-links li {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            padding: 15px 30px;
+            border-radius: 50px;
+            background-color: #444;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-links a:hover {
+            background-color: #5e5e5e;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            color: #ffcc00; /* Цвет текста при наведении */
+        }
+
+        .social-links a:active {
+            transform: scale(1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .info {
+            margin-top: 40px;
+            color: #B0B0B0;
+            font-size: 18px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .info.open {
+            display: block;
+            opacity: 1;
+        }
+
+        .info p {
+            margin: 20px 0;
+        }
+
+        .show-info-btn {
+            background-color: #444;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .show-info-btn:hover {
+            background-color: #5e5e5e;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .show-info-btn:active {
+            transform: scale(1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Адаптивность */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 36px;
+            }
+
+            .social-links a {
+                font-size: 20px;
+                padding: 12px 24px;
+            }
+
+            .show-info-btn {
+                font-size: 16px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="title">ABOUT ME</div>
+        <ul class="social-links">
+            <!-- Ссылки с иконками -->
+            <li><a href="https://t.me/psixozs" target="_blank">Telegram</a></li>
+            <li><a href="https://steamcommunity.com/profiles/76561199496292400/" target="_blank">Steam</a></li>
+            <li><a href="https://discordapp.com/users/1019957543709192252/" target="_blank">Discord</a></li>
+        </ul>
+
+        <!-- Кнопка для открытия дополнительной информации -->
+        <button class="show-info-btn" onclick="toggleInfo()">Узнать больше</button>
+
+        <!-- Скрытая информация о тебе -->
+        <div class="info" id="info">
+            <p>Я начинающий программист, который занимается разработкой сайтов на заказ. У меня есть опыт в HTML, CSS, JavaScript и других веб-технологиях. Если вам нужно создать качественный и функциональный сайт, не стесняйтесь связаться со мной!</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleInfo() {
+            const info = document.getElementById('info');
+            info.classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
